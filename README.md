@@ -1,7 +1,7 @@
-CS 61A: Structure and Interpretation of Computer Programs
+# CS 61A: 
 
-UC Berkeley, Fall 2018
+## Structure and Interpretation of Computer Programs
 
-https://inst.eecs.berkeley.edu/~cs61a/fa18/
+### https://inst.eecs.berkeley.edu/~cs61a/fa18/
 
-http://composingprograms.com/
+##### UC Berkeley, Fall 2018
