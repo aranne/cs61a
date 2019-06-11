@@ -1,0 +1,37 @@
+(define (accumulate combiner start n term)
+  (if (< n 1) start
+    (combiner (term n) (accumulate combiner start (- n 1) term))
+  )
+)
+
+(define (accumulate-tail combiner start n term)
+  (if (< n 1) start
+       (accumulate-tail combiner (combiner (term n) start) (- n 1) term)
+  )
+)
+
+(define (partial-sums stream)
+  (define (helper n stream)
+      (if (null? stream)
+        ()
+        (cons-stream
+                  (+ n (car stream))
+                  (helper (+ n (car stream)) (cdr-stream stream))
+      )
+      )
+  )
+  (helper 0 stream)
+)
+
+(define (rle s)
+  (define (prev s k len)
+     (cond ((null? s) (cons-stream (list k len) nil))
+           ((= k (car s)) (prev (cdr-stream s) (car s) (+ len 1)))
+           (else (cons-stream (list k len) (prev s (car s) 0)))
+     )
+  )
+  (if (null? s)
+      ()
+      (prev s (car s) 0)
+  )
+)
