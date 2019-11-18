@@ -1,7 +1,3 @@
-
-
-
-
 def count_partitions(n, m):
     """Count the partitions of n using parts up to size m.
 n: The number of partitions of a positive integer
